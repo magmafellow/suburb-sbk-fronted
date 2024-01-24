@@ -1,0 +1,28 @@
+.header {
+  margin-bottom: 30px;
+}
+.menu {
+  height: 100px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #617fb8;
+  height: 100%;
+
+  &__item {
+    background-color: #72c2c9;
+    border-radius: 8px;
+    transition: .3s;
+    &:hover {
+      background-color: #67b4b8;
+    }
+  }
+  &__link {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+}

@@ -8,21 +8,21 @@ function serve() {
     server: './',
   })
 
-  gulp.watch('src/sass/*.sass', buildStyles)
+  gulp.watch('src/sass/*.scss', buildStyles)
   gulp.watch('src/*.html').on('change', browserSync.reload); // EVENT MUST BE! NOT as callback
 }
 
 // Compile sass into CSS & auto-inject into browsers
 function buildStyles() {
   return gulp
-    .src('src/sass/*.sass')
-    .pipe(sass({syntax: 'indented'}))
+    .src('src/sass/*.scss')
+    .pipe(sass())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream())
 }
 
-exports.default = function(cb) {
+exports.test = function(cb) {
   console.log('I am done')
   cb()
 }
-exports.watch = serve
+exports.default = serve
